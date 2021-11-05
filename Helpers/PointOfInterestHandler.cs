@@ -173,7 +173,20 @@ namespace MapAssist.Helpers
                     }
                 }
             }
-
+                switch (areaData.Area)
+                {
+                    case Area.HallsOfVaught:
+                        if (obj == GameObject.NihlathakWildernessStartPosition)
+                        {
+                            pointOfInterest.Add(new PointOfInterest
+                            {
+                                Label = obj.ToString(),
+                                Position = points[0],
+                                RenderingSettings = Settings.Rendering.Quest
+                            });
+                        }
+                        break;
+                }
             return pointOfInterest;
         }
     }
