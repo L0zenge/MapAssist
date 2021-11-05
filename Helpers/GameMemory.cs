@@ -104,12 +104,12 @@ namespace MapAssist.Helpers
                     throw new Exception("Player pointer is zero.");
                 }
 
-                IntPtr aPlayerUnit = Read<IntPtr>(processHandle, PlayerUnitPtr); 
+                /*IntPtr aPlayerUnit = Read<IntPtr>(processHandle, PlayerUnitPtr); 
     
                 if (aPlayerUnit == IntPtr.Zero)
                 {
                     throw new Exception("Player address is zero.");
-                }
+                }*/
 
                 var playerName = Encoding.ASCII.GetString(Read<byte>(processHandle, PlayerUnit.UnitData, 16)).TrimEnd((char)0);
                 var act = Read<Act>(processHandle, (IntPtr)PlayerUnit.pAct);
